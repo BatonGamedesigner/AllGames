@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IronWood</title>
+  <!-- временный jQuery. На бекенде потом подключат свой -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="/css/common.css" rel="stylesheet"></head>
+
+<body class="body">
+  <div class="page" id="vue-app">
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__container">
+          <div class="header__column header__column_logo">
+            <a href="/" class="logo">
+              <svg class="logo__image">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="header__column header__column_large header__column_clear_right">
+            <div class="socials">
+              <a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-vk"></use>
+                </svg>
+              </a><!-- убирает пробелы между инлайн блоками
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-instagram"></use>
+                </svg>
+              </a><!--
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-odnoklassniki"></use>
+                </svg>
+              </a><!--
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-facebook"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="header__column header__column_search">
+            <form class="search" action="#" method="GET">
+              <input class="search__input" type="search" placeholder="Поиск по сайту">
+              <button class="search__button" title="Искать">
+                <svg class="search__icon">
+                  <use xlink:href="#icon-search"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="header__column">
+            <a class="badge" href="tel:+79057441218">
+              <div class="badge__image">
+                <svg class="badge__icon">
+                  <use xlink:href="#icon-phone"></use>
+                </svg>
+              </div>
+              <div class="badge__label">+7 905 744-12-18</div>
+            </a>
+          </div>
+          <div class="header__column header__column_clear_right">
+            <!-- вариант пустой корзины -->
+            <!-- <a class="badge" href="/cart.html">
+              <div class="badge__image">
+                <svg class="badge__icon">
+                  <use xlink:href="#icon-shopping-cart"></use>
+                </svg>
+              </div>
+              <div class="badge__label badge__label_small">Корзина: пуста</div>
+            </a> -->
+            <!-- вариант заполненной корзины -->
+            <a class="badge" href="/cart.html">
+              <div class="badge__image badge__image_active">
+                <div class="badge__number">6</div>
+              </div>
+              <div class="badge__label badge__label_small">Корзина: 10&nbsp;541&nbsp;&#8381;</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="navigation js-navigation">
+      <div class="navigation__wrapper">
+        <div class="navigation__button js-navigation__button">
+          <span class="navigation__line"></span>
+          <span class="navigation__line"></span>
+          <span class="navigation__line"></span>
+        </div>
+        <nav class="header-nav navigation__content js-navigation__content">
+          <ul class="header-nav__list">
+            <li class="header-nav__list-item">
+              <a href="/" class="header-nav__link">Главная</a>
+            </li>
+            <li class="header-nav__list-item header-nav__list-item_has-dropdown js-header-nav__button">
+              <a class="header-nav__link" href="/catalog.html">
+                Коллекции
+                <svg class="header-nav__icon">
+                  <use xlink:href="#icon-arrow-down"></use>
+                </svg>
+              </a>
+              <div class="header-nav__dropdown">
+                <div class="dropdown">
+                  <ul class="dropdown__content">
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 1</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 2</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 3</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Lorem, ipsum dolor.</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/about.html" class="header-nav__link">О компании</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/for-designers.html" class="header-nav__link">Дизайнерам</a>
+            </li>
+            <li class="header-nav__list-item active">
+              <a href="/reviews.html" class="header-nav__link">Отзывы</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/delivery.html" class="header-nav__link">Доставка и оплата</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/contacts.html" class="header-nav__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <main class="main">
+      <div class="wrapper">
+        <div class="page__section-xs">
+          <ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+            <li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__list">
+              <a href="/" itemprop="item" class="breadcrumb__link">
+                <span itemprop="name">Главная</span>
+              </a>
+              <meta itemprop="position" content="0">
+            </li>
+            <li class="breadcrumb__list active">Отзывы</li>
+          </ol>
+        </div>
+        <section class="page__section">
+          <h1 class="title title_size_l">Отзывы</h1>
+          <div class="page__section-main">
+            <div class="pillars">
+              <div class="pillars__item">
+                <div class="page__field">
+                  <div class="review-card">
+                    <div class="review-card__wrapper review-card__wrapper_simple">
+                      <div class="user-content">
+                        Качеством мебели доволен вполне. Ребята молодцы, приехали, все собрали, быстро и четко – мне понравилось. А мебель сама оригинальненькая,
+                        поэтому я и купил. Единственное, немного опоздали с поставкой, но, что самое, пожалуй, приятное я
+                        от этого только выиграл – получил подарочки и бонусы от компании. Это классно!
+                      </div>
+                      <div class="review-card__field">
+                        <div class="small-gallery js-small-gallery_simple">
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 1">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 2">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 3">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 4">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-card__caption review-card__caption_complex">
+                      <div class="review-card__label">
+                        Грановская Оксана
+                      </div>
+                      <div class="review-card__label review-card__label_right">
+                        28 Сентября 2017
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="page__field">
+                  <div class="review-card">
+                    <div class="review-card__wrapper review-card__wrapper_simple">
+                      <div class="user-content">
+                        Качеством мебели доволен вполне. Ребята молодцы, приехали, все собрали, быстро и четко – мне понравилось. А мебель сама оригинальненькая,
+                        поэтому я и купил. Единственное, немного опоздали с поставкой, но, что самое, пожалуй, приятное я
+                        от этого только выиграл – получил подарочки и бонусы от компании. Это классно!
+                      </div>
+                      <div class="review-card__field">
+                        <div class="small-gallery js-small-gallery_simple">
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 1">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 2">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 3">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 4">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-card__caption review-card__caption_complex">
+                      <div class="review-card__label">
+                        Грановская Оксана
+                      </div>
+                      <div class="review-card__label review-card__label_right">
+                        28 Сентября 2017
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="page__field">
+                  <div class="review-card">
+                    <div class="review-card__wrapper review-card__wrapper_simple">
+                      <div class="user-content">
+                        Качеством мебели доволен вполне. Ребята молодцы, приехали, все собрали, быстро и четко – мне понравилось. А мебель сама оригинальненькая,
+                        поэтому я и купил. Единственное, немного опоздали с поставкой, но, что самое, пожалуй, приятное я
+                        от этого только выиграл – получил подарочки и бонусы от компании. Это классно!
+                      </div>
+                      <div class="review-card__field">
+                        <div class="small-gallery js-small-gallery_simple">
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 1">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 2">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 3">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 4">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-card__caption review-card__caption_complex">
+                      <div class="review-card__label">
+                        Грановская Оксана
+                      </div>
+                      <div class="review-card__label review-card__label_right">
+                        28 Сентября 2017
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="page__field">
+                  <div class="review-card">
+                    <div class="review-card__wrapper review-card__wrapper_simple">
+                      <div class="user-content">
+                        Качеством мебели доволен вполне. Ребята молодцы, приехали, все собрали, быстро и четко – мне понравилось. А мебель сама оригинальненькая,
+                        поэтому я и купил. Единственное, немного опоздали с поставкой, но, что самое, пожалуй, приятное я
+                        от этого только выиграл – получил подарочки и бонусы от компании. Это классно!
+                      </div>
+                      <div class="review-card__field">
+                        <div class="small-gallery js-small-gallery_simple">
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 1">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 2">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 3">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                          <a class="small-gallery__item js-small-gallery__item" href="https://dummyimage.com/1024x768/ababab/fff" title="Фото 4">
+                            <img class="small-gallery__image" src="https://dummyimage.com/328x233/ababab/fff" alt="Фото">
+                            <div class="small-gallery__mask">
+                              <svg class="small-gallery__icon">
+                                <use xlink:href="#icon-zoom"></use>
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-card__caption review-card__caption_complex">
+                      <div class="review-card__label">
+                        Грановская Оксана
+                      </div>
+                      <div class="review-card__label review-card__label_right">
+                        28 Сентября 2017
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="page__section">
+                  <ul class="pagination">
+                    <li class="prev disabled">
+                      <span>
+                        <svg class="pagination__icon">
+                          <use xlink:href="#icon-arrow-down"></use>
+                        </svg>
+                      </span>
+                    </li>
+                    <li class="active">
+                      <a href="javascript:;" data-page="0">1</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" data-page="1">2</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;" data-page="2">3</a>
+                    </li>
+                    <li class="next">
+                      <a href="javascript:;" data-page="1">
+                        <svg class="pagination__icon pagination__icon_next">
+                          <use xlink:href="#icon-arrow-down"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="pillars__item pillars__item_small">
+                <div class="frame">
+                  <div class="frame__content">
+                    <form action="#" class="form" method="GET">
+                      <div class="title title_size_s">Оставить отзыв</div>
+                      <div class="page__section-xs">
+                        <div class="user-content">
+                          Вы можете оставить свои пожелания и отзыв о работе магазина и других служб компании.
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form-group has-error">
+                          <input class="form-control" type="text" placeholder="Ваше имя*">
+                          <div class="help-block">Необходимо заполнить имя</div>
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form-group">
+                          <input class="form-control" type="tel" placeholder="Ваш телефон или email*">
+                          <div class="help-block">Необходимо заполнить поле</div>
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form-group">
+                          <textarea class="form-control" placeholder="Ваш отзыв*"></textarea>
+                          <div class="help-block">Необходимо заполнить поле</div>
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form-group">
+                          <div class="form__captcha">
+                            <img src="/img/form-captcha.png" alt="Заглушка" style="display: block">
+                          </div>
+                          <div class="help-block">Нужно пройти проверку</div>
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form-group">
+                          <input type="file" multiple>
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <div class="form-group">
+                          <div class="checkbox">
+                            <input class="checkbox__input" id="agreement" type="checkbox">
+                            <label class="checkbox__label" for="agreement">
+                              Я согласен(а) на обработку
+                              <a class="link" href="javascript:;">персональных данных.</a>
+                            </label>
+                          </div>
+                          <div class="help-block">Необходимо дать согласие</div>
+                        </div>
+                      </div>
+                      <div class="form__field">
+                        <button class="button">Отправить</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="page__section">
+                  <div class="title title_size_s">Мы в социальных сетях</div>
+                  <div class="page__section-xs">
+                    место для виджета инстаграм
+                  </div>
+                  <div class="page__section-xs">
+                    место для виджета вконтакте
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- добавлен модификатор info_decorated -->
+      <div class="info info_decorated">
+        <div class="wrapper">
+          <div class="info__container">
+            <div class="info__column info__column_shrink">
+              <div class="info-title">
+                <!-- добавлен модификатор info-title__icon -->
+                <svg class="info-title__icon info-title__icon_dark">
+                  <use xlink:href="#icon-questions"></use>
+                </svg>
+                <div class="info-title__text">Есть вопросы?</div>
+              </div>
+            </div>
+            <div class="info__column">
+              <div class="info__text">
+                Вы можете задать вопрос или проконсультироваться с нашим менеджером.
+              </div>
+            </div>
+            <div class="info__column">
+              <a href="#popup_question" class="button button_size_l button_color_dark button_transparent js-popup__open" data-effect="mfp-zoom-in">Задать вопрос</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__container">
+          <div class="footer__column footer__column_grow">
+            <ul class="footer-nav">
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/">Главная</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/collections.html">Коллекции</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/about.html">О компании</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/for-designers.html">Дизайнерам</a>
+              </li>
+              <li class="footer-nav__item active">
+                <a class="footer-nav__link" href="/reviews.html">Отзывы</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/delivery.html">Доставка и оплата</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/contacts.html">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            &copy; 2018 Компания IRONWOOD
+            <br>
+            <a href="javascript:;" class="link link_light">Политика конфиденциальности</a>
+          </div>
+          <div class="footer__column">
+            <a class="bees-logo" href="http://onlinebees.ru/" target="_blank">
+              <svg class="bees-logo__icon">
+                <use xlink:href="#icon-bees-logo"></use>
+              </svg>
+              <div class="bees-logo__text">
+                Разработка сайта
+                <br>onlinebees.ru
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="popup_question" class="popup mfp-with-anim mfp-hide">
+      <div class="title title_size_s title_centered">Что вы хотите спросить?</div>
+      <div class="page__section-xs">
+        <form action="#" class="form" method="POST">
+          <div class="form__field">
+            <div class="form-group has-error">
+              <input class="form-control" type="text" placeholder="Ваше имя*">
+              <div class="help-block">Необходимо заполнить имя</div>
+            </div>
+          </div>
+          <div class="form__field">
+            <div class="form-group">
+              <input class="form-control" type="tel" placeholder="Ваш телефон или email*">
+              <div class="help-block">Необходимо заполнить поле</div>
+            </div>
+          </div>
+          <div class="form__field">
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Ваш вопрос*"></textarea>
+              <div class="help-block">Необходимо заполнить поле</div>
+            </div>
+          </div>
+          <div class="form__field form__field_centered">
+            <div class="form-group">
+              <div class="checkbox">
+                <input class="checkbox__input" id="agreement" type="checkbox">
+                <label class="checkbox__label" for="agreement">
+                  Я согласен(а) на обработку <a class="link" href="javascript:;">персональных данных.</a>
+                </label>
+              </div>
+              <div class="help-block">Необходимо дать согласие</div>
+            </div>
+          </div>
+          <div class="form__field">
+            <div class="form-group">
+              <div class="form__captcha form__captcha_centered">
+                <img src="/img/form-captcha.png" alt="Заглушка" style="display: block">
+              </div>
+              <div class="help-block">Нужно пройти проверку</div>
+            </div>
+          </div>
+          <div class="form__field form__field_centered">
+            <button class="button">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" src="/js/common.js"></script></body>
+
+</html>

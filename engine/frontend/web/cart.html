@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IronWood</title>
+  <!-- временный jQuery. На бекенде потом подключат свой -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="/css/common.css" rel="stylesheet"></head>
+
+<body class="body">
+  <div class="page" id="vue-app">
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__container">
+          <div class="header__column header__column_logo">
+            <a href="/" class="logo">
+              <svg class="logo__image">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="header__column header__column_large header__column_clear_right">
+            <div class="socials">
+              <a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-vk"></use>
+                </svg>
+              </a><!-- убирает пробелы между инлайн блоками
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-instagram"></use>
+                </svg>
+              </a><!--
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-odnoklassniki"></use>
+                </svg>
+              </a><!--
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-facebook"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="header__column header__column_search">
+            <form class="search" action="#" method="GET">
+              <input class="search__input" type="search" placeholder="Поиск по сайту">
+              <button class="search__button" title="Искать">
+                <svg class="search__icon">
+                  <use xlink:href="#icon-search"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="header__column">
+            <a class="badge" href="tel:+79057441218">
+              <div class="badge__image">
+                <svg class="badge__icon">
+                  <use xlink:href="#icon-phone"></use>
+                </svg>
+              </div>
+              <div class="badge__label">+7 905 744-12-18</div>
+            </a>
+          </div>
+          <div class="header__column header__column_clear_right">
+            <!-- вариант пустой корзины -->
+            <!-- <a class="badge" href="/cart.html">
+              <div class="badge__image">
+                <svg class="badge__icon">
+                  <use xlink:href="#icon-shopping-cart"></use>
+                </svg>
+              </div>
+              <div class="badge__label badge__label_small">Корзина: пуста</div>
+            </a> -->
+            <!-- вариант заполненной корзины -->
+            <a class="badge" href="/cart.html">
+              <div class="badge__image badge__image_active">
+                <div class="badge__number">6</div>
+              </div>
+              <div class="badge__label badge__label_small">Корзина: 10&nbsp;541&nbsp;&#8381;</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="navigation js-navigation">
+      <div class="navigation__wrapper">
+        <div class="navigation__button js-navigation__button">
+          <span class="navigation__line"></span>
+          <span class="navigation__line"></span>
+          <span class="navigation__line"></span>
+        </div>
+        <nav class="header-nav navigation__content js-navigation__content">
+          <ul class="header-nav__list">
+            <li class="header-nav__list-item">
+              <a href="/" class="header-nav__link">Главная</a>
+            </li>
+            <li class="header-nav__list-item header-nav__list-item_has-dropdown js-header-nav__button active">
+              <a class="header-nav__link" href="/catalog.html">
+                Коллекции
+                <svg class="header-nav__icon">
+                  <use xlink:href="#icon-arrow-down"></use>
+                </svg>
+              </a>
+              <div class="header-nav__dropdown">
+                <div class="dropdown">
+                  <ul class="dropdown__content">
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 1</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 2</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 3</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Lorem, ipsum dolor.</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/about.html" class="header-nav__link">О компании</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/for-designers.html" class="header-nav__link">Дизайнерам</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/reviews.html" class="header-nav__link">Отзывы</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/delivery.html" class="header-nav__link">Доставка и оплата</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/contacts.html" class="header-nav__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <main class="main">
+      <div class="wrapper">
+        <div class="page__section-xs">
+          <ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+            <li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__list">
+              <a href="/" itemprop="item" class="breadcrumb__link">
+                <span itemprop="name">Главная</span>
+              </a>
+              <meta itemprop="position" content="0">
+            </li>
+            <li class="breadcrumb__list active">Корзина</li>
+          </ol>
+        </div>
+        <section class="page__section">
+          <h1 class="title title_size_l">Корзина</h1>
+          <div class="page__section-main">
+            <div class="row row_headers">
+              <div class="row__item row__item_photo">Фото</div>
+              <div class="row__item row__item_large">Наименование товара и описание</div>
+              <div class="row__item row__item_fix">Цена</div>
+              <div class="row__item row__item_fix">Количество</div>
+              <div class="row__item row__item_fix">Стоимость</div>
+              <div class="row__item row__item_small"></div>
+            </div>
+            <div class="row">
+              <div class="row__wrapper">
+                <div class="row__item row__item_photo">
+                  <div class="adjuster adjuster_bordered">
+                    <canvas class="adjuster__canvas" width="1" height="1"></canvas>
+                    <img class="adjuster__image" src="https://dummyimage.com/120x120/000/fff" alt="Фото">
+                  </div>
+                </div>
+                <div class="row__item row__item_large">
+                  <div class="information">
+                    <div class="title title_size_s title_low">
+                      Тумба под ТВ "Марсель-030" из железа
+                    </div>
+                    <ul class="information__list">
+                      <li class="information__item">Габариты: 750х600х600 мм</li>
+                      <li class="information__item">Высота столешницы: 200 мм</li>
+                      <li class="information__item">Цвет: Бежевый</li>
+                      <li class="information__item">Материал: Цельноламельный / железо</li>
+                      <li class="information__item">Поверхность: матовая</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row__item row__item_fix">
+                <div class="price">49&nbsp;250&nbsp;&#8381;</div>
+              </div>
+              <div class="row__item row__item_fix">
+                <div class="count-select">
+                  <div class="count-select__item count-select__item_button"></div>
+                  <div class="count-select__item">
+                    <input class="count-select__input" type="number" value="10">
+                  </div>
+                  <div class="count-select__item count-select__item_button count-select__item_button_minus"></div>
+                </div>
+              </div>
+              <div class="row__item row__item_fix">
+                <div class="price">490&nbsp;250&nbsp;&#8381;</div>
+              </div>
+              <div class="row__item row__item_small row__item_full">
+                <a class="button-large" href="javascript:;">
+                  <svg class="button-large__icon">
+                    <use xlink:href="#icon-bin"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row__wrapper">
+                <div class="row__item row__item_photo">
+                  <div class="adjuster adjuster_bordered">
+                    <canvas class="adjuster__canvas" width="1" height="1"></canvas>
+                    <img class="adjuster__image" src="https://dummyimage.com/120x120/000/fff" alt="Фото">
+                  </div>
+                </div>
+                <div class="row__item row__item_large">
+                  <div class="information">
+                    <div class="title title_size_s title_low">
+                      Шкаф настенный "Берге"
+                    </div>
+                    <ul class="information__list">
+                      <li class="information__item">Габариты: 750х600х600 мм</li>
+                      <li class="information__item">Цвет: Бежевый</li>
+                      <li class="information__item">Материал: Цельноламельный</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row__item row__item_fix">
+                <div class="price">1&nbsp;250&nbsp;&#8381;</div>
+              </div>
+              <div class="row__item row__item_fix">
+                <div class="count-select">
+                  <div class="count-select__item count-select__item_button"></div>
+                  <div class="count-select__item">
+                    <input class="count-select__input" type="number" value="1">
+                  </div>
+                  <div class="count-select__item count-select__item_button count-select__item_button_minus"></div>
+                </div>
+              </div>
+              <div class="row__item row__item_fix">
+                <div class="price">1&nbsp;250&nbsp;&#8381;</div>
+              </div>
+              <div class="row__item row__item_small row__item_full">
+                <a class="button-large" href="javascript:;">
+                  <svg class="button-large__icon">
+                    <use xlink:href="#icon-bin"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="result result_indent">
+              <div class="result__item">Итого:</div>
+              <div class="result__item">
+                <div class="price">541&nbsp;250&nbsp;&#8381;</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <form action="#" method="POST">
+          <section class="page__sheet page__section-main">
+            <h2 class="title title_top">Оформление заказа</h2>
+            <h3 class="title title_size_s">Введите ваши данные</h3>
+            <div class="page__section-xs">
+              <div class="form form_size_m">
+                <div class="form__field">
+                  <div class="form-group has-error">
+                    <input class="form-control" type="text" placeholder="ФИО*">
+                    <div class="help-block">Необходимо заполнить ФИО</div>
+                  </div>
+                </div>
+                <div class="form__field">
+                  <div class="form-group">
+                    <input class="form-control" type="tel" placeholder="Ваш телефон*">
+                    <div class="help-block">Необходимо ввести телефон</div>
+                  </div>
+                </div>
+                <div class="form__field">
+                  <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Ваш адрес">
+                  </div>
+                </div>
+                <div class="form__field">
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Комментарий к заказу здесь вы можете указать информацию о получателе: этаж, код от домофона или любую полезную информацию для нас "></textarea>
+                  </div>
+                </div>
+                <div class="form__field">
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <input class="checkbox__input" id="agreement" type="checkbox">
+                      <label class="checkbox__label" for="agreement">
+                        Я согласен(а) на обработку <a class="link" href="javascript:;">персональных данных.</a>
+                      </label>
+                    </div>
+                    <div class="help-block">Необходимо дать согласие</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page__section-l">
+              <h3 class="title title_size_s">Способ доставки</h3>
+              <div class="page__section-xs">
+                <div class="methods">
+                  <div class="methods__item">
+                    <input class="methods__input" id="delivery-self" name="delivery" type="radio" checked>
+                    <label class="methods__label" for="delivery-self">
+                      <div class="type">
+                        <div class="type__title">
+                          Самовывоз (только г. Пенза)
+                        </div>
+                        <div class="type__container">
+                          <img class="type__image" src="/img/type__image_self.jpg" alt="Самовывоз">
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="methods__item methods__item_large">
+                    <input class="methods__input" id="delivery-company" name="delivery" type="radio">
+                    <label class="methods__label" for="delivery-company">
+                      <div class="type">
+                        <div class="type__title">
+                          Транспортная компания
+                        </div>
+                        <div class="type__container type__container_complex">
+                          <div class="type__column">
+                            <img class="type__image" src="/img/type__image_pek.png" alt="ПЭК">
+                          </div>
+                          <div class="type__column">
+                            <img class="type__image" src="/img/type__image_del-linii.png" alt="Деловые линии">
+                          </div>
+                          <div class="type__column">
+                            <img class="type__image" src="/img/type__image_zheldor.png" alt="Желдорэкспедиция">
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page__section-l">
+              <h3 class="title title_size_s">Оплата заказа</h3>
+              <div class="page__section-xs">
+                <table class="checklist">
+                  <tr class="checklist__row checklist__row_top">
+                    <td class="checklist__cell">Всего в корзине:</td>
+                    <td class="checklist__cell">2 товара</td>
+                  </tr>
+                  <tr class="checklist__row">
+                    <td class="checklist__cell">Общая сумма:</td>
+                    <td class="checklist__cell">
+                      <span class="price">541&nbsp;250&nbsp;&#8381;</span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <button class="button">Оформить заказ</button>
+              <div class="page__section-xs">
+                <div class="info-label">
+                  Наш менеджер свяжется с Вами, уточнит информацию и выставит счёт для оплаты любым удобным для Вас способом.
+                </div>
+              </div>              
+            </div>  
+          </section>
+        </form>
+      </div>
+      <!-- добавлен модификатор info_decorated -->
+      <div class="info info_decorated">
+        <div class="wrapper">
+          <div class="info__container">
+            <div class="info__column info__column_shrink">
+              <div class="info-title">
+                <!-- добавлен модификатор info-title__icon -->
+                <svg class="info-title__icon info-title__icon_dark">
+                  <use xlink:href="#icon-questions"></use>
+                </svg>
+                <div class="info-title__text">Есть вопросы?</div>
+              </div>
+            </div>
+            <div class="info__column">
+              <div class="info__text">
+                Вы можете задать вопрос или проконсультироваться с нашим менеджером.
+              </div>
+            </div>
+            <div class="info__column">
+              <a href="javascript:;" class="button button_size_l button_color_dark button_transparent">Задать вопрос</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__container">
+          <div class="footer__column footer__column_grow">
+            <ul class="footer-nav">
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/">Главная</a>
+              </li>
+              <li class="footer-nav__item active">
+                <a class="footer-nav__link" href="/collections.html">Коллекции</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/about.html">О компании</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/for-designers.html">Дизайнерам</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/reviews.html">Отзывы</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/delivery.html">Доставка и оплата</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/contacts.html">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            &copy; 2018 Компания IRONWOOD
+            <br>
+            <a href="javascript:;" class="link link_light">Политика конфиденциальности</a>
+          </div>
+          <div class="footer__column">
+            <a class="bees-logo" href="http://onlinebees.ru/" target="_blank">
+              <svg class="bees-logo__icon">
+                <use xlink:href="#icon-bees-logo"></use>
+              </svg>
+              <div class="bees-logo__text">
+                Разработка сайта
+                <br>onlinebees.ru
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+<script type="text/javascript" src="/js/common.js"></script></body>
+
+</html>

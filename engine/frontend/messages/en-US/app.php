@@ -1,0 +1,65 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: 1
+ * Date: 01.06.2017
+ * Time: 11:53
+ */
+use backend\models\Base;
+use backend\models\Category;
+
+return [
+    'Главная' => 'Owner',
+    'Блог' => 'Blog',
+    'Подробнее' => 'Learn More',
+    Base::LINK_NEXT => 'Next &rarr;',
+    Base::LINK_PREV => '&larr; Prev',
+    'Сделано в' => 'Made in',
+    'предыдущая статья' => 'previous article',
+    'следующая статья' => 'next article',
+    'Мы в фейсбуке' => 'We are on Facebook',
+    'Мы вконтакте' => 'We are vkontakte',
+    'Мы в инстаграм' => 'We are in the Instagram',
+    'Ваше имя' => 'Your name',
+    'Ваш телефон или e-mail' => 'Your phone or e-mail',
+    'Текст сообщения' => 'Message text',
+    'У Вас есть вопросы?' => 'You have questions?',
+    'Пожалуйста, не забудьте указать Ваш актуальный телефон или адрес электронной почты! Он нужен нам, чтобы ответить на Ваше сообщение и не будет использован для рассылки или в рекламных целях. Мы уважаем конфиденциальность наших клиентов.' => 'Please, do not forget to indicate your current phone number or e-mail address! We need him to answer your Message and will not be used for distribution or for promotional purposes. We respect privacy our clients.',
+    'Отправить' => 'Send',
+    'Наш адрес' => 'Our address',
+    'Телефоны' => 'Telephones',
+    'Режим работы' => 'Operating mode',
+    'Почта' => 'Post',
+    'Спасибо, мы с Вами скоро свяжемся' => 'Thank you, we will contact you soon',
+    'Пожалуйста, подтвердите, что вы не робот.' => 'Please confirm that you are not a robot.',
+    Category::NAME => 'Price list',
+    'Площадь помещения' => 'Area of the room',
+    'rouble' => 'dollar',
+    'c' => '$',
+    'до' => 'before',
+    'Наша команда' => 'Our team',
+    'О нас говорят...' => 'About us they say...',
+    'Как мы работаем' => 'How we are working',
+    'посмотреть пример' => 'see an example',
+    'пример' => 'example',
+    'загляните в наше портфолио' => 'check our portfolio',
+    'Портфолио' => 'Portfolio',
+    'предыдущий проект' => 'previous project',
+    'следующий проект' => 'next project',
+    'Понравились проекты?' => 'Did you like the projects?',
+    'Оставьте свои данные, чтобы договориться о встрече в нашем комфортном офисе' => 'Leave your data to arrange a meeting in our comfortable office',
+    'авторский надзор' => 'author\'s supervision',
+    'Все' => 'All',
+    'Частные интерьеры' => 'Private interiors',
+    'Общественные  интерьеры' => 'Public interiors',
+    'Площадь проекта' => 'Area of the project',
+    'Бюджет' => 'Budget',
+    'Стиль' => 'Style',
+    'рублей' => 'rubles',
+    'Планировочное решение' => 'Planning solution',
+    'Исходный план' => 'Initial plan',
+    'Фактический план' => 'The actual plan',
+    'Еще фотографии' => 'More photos',
+    'Комментарий клиента' => 'Customer Commentary',
+    'О проекте' => 'About the project',
+];

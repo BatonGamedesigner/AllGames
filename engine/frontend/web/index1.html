@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IronWood</title>
+  <!-- временный jQuery. На бекенде потом подключат свой -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="/css/common.css" rel="stylesheet"></head>
+
+<body class="body">
+  <div class="page" id="vue-app">
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__container">
+          <div class="header__column header__column_logo">
+            <a href="/" class="logo">
+              <svg class="logo__image">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="header__column header__column_large header__column_clear_right">
+            <div class="socials">
+              <a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-vk"></use>
+                </svg>
+              </a><!-- убирает пробелы между инлайн блоками
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-instagram"></use>
+                </svg>
+              </a><!--
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-odnoklassniki"></use>
+                </svg>
+              </a><!--
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-facebook"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="header__column header__column_search">
+            <form class="search" action="#" method="GET">
+              <input class="search__input" type="search" placeholder="Поиск по сайту">
+              <button class="search__button" title="Искать">
+                <svg class="search__icon">
+                  <use xlink:href="#icon-search"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="header__column">
+            <a class="badge" href="tel:+79057441218">
+              <div class="badge__image">
+                <svg class="badge__icon">
+                  <use xlink:href="#icon-phone"></use>
+                </svg>
+              </div>
+              <div class="badge__label">+7 905 744-12-18</div>
+            </a>
+          </div>
+          <div class="header__column header__column_clear_right">
+            <!-- вариант пустой корзины -->
+            <!-- <a class="badge" href="/cart.html">
+              <div class="badge__image">
+                <svg class="badge__icon">
+                  <use xlink:href="#icon-shopping-cart"></use>
+                </svg>
+              </div>
+              <div class="badge__label badge__label_small">Корзина: пуста</div>
+            </a> -->
+            <!-- вариант заполненной корзины -->
+            <a class="badge" href="/cart.html">
+              <div class="badge__image badge__image_active">
+                <div class="badge__number">6</div>
+              </div>
+              <div class="badge__label badge__label_small">Корзина: 10&nbsp;541&nbsp;&#8381;</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- модификатор navigation_transparent только для главной страницы -->
+    <div class="navigation navigation_transparent js-navigation">
+      <div class="navigation__wrapper">
+        <div class="navigation__button js-navigation__button">
+          <span class="navigation__line"></span>
+          <span class="navigation__line"></span>
+          <span class="navigation__line"></span>
+        </div>
+        <nav class="header-nav navigation__content js-navigation__content">
+          <ul class="header-nav__list">
+            <li class="header-nav__list-item active">
+              <a href="/" class="header-nav__link">Главная</a>
+            </li>
+            <li class="header-nav__list-item header-nav__list-item_has-dropdown js-header-nav__button">
+              <a class="header-nav__link" href="/catalog.html">
+                Коллекции
+                <svg class="header-nav__icon">
+                  <use xlink:href="#icon-arrow-down"></use>
+                </svg>
+              </a>
+              <div class="header-nav__dropdown">
+                <div class="dropdown">
+                  <ul class="dropdown__content">
+                    <li class="dropdown__item active">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 1</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 2</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 3</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Lorem, ipsum dolor.</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/about.html" class="header-nav__link">О компании</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/for-designers.html" class="header-nav__link">Дизайнерам</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/reviews.html" class="header-nav__link">Отзывы</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/delivery.html" class="header-nav__link">Доставка и оплата</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/contacts.html" class="header-nav__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <main class="main">
+      <div class="main-slider swiper-container js-main-slider">
+        <div class="main-slider__wrapper swiper-wrapper">
+          <div class="slide swiper-slide">
+            <img class="slide__image swiper-lazy" alt="фото" data-src="/img/main-slider__image.jpg">
+            <div class="slide__content">
+              <div class="slide__cell">
+                <div class="slide__title">Мебель в стиле лофт</div>
+                <div class="slide__caption">коллекция Берге</div>
+                <div class="slide__button">
+                  <a class="button button_color_dark" href="javascript:;">Смотреть</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide swiper-slide">
+            <img class="slide__image swiper-lazy" alt="фото" data-src="/img/main-slider__image.jpg">
+            <div class="slide__content">
+              <div class="slide__cell">
+                <div class="slide__title">Мебель в стиле лофт</div>
+                <div class="slide__caption">коллекция Берге</div>
+                <div class="slide__button">
+                  <a class="button button_color_dark" href="javascript:;">Смотреть</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide swiper-slide">
+            <img class="slide__image swiper-lazy" alt="фото" data-src="/img/main-slider__image.jpg">
+            <div class="slide__content">
+              <div class="slide__cell">
+                <div class="slide__title">Мебель в стиле лофт</div>
+                <div class="slide__caption">коллекция Берге</div>
+                <div class="slide__button">
+                  <a class="button button_color_dark" href="javascript:;">Смотреть</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-slider__pagination js-main-slider__pagination"></div>
+        <div class="main-slider__button js-main-slider__prev">
+          <svg class="main-slider__icon">
+            <use xlink:href="#icon-arrow-down"></use>
+          </svg>
+        </div>
+        <div class="main-slider__button main-slider__button_next js-main-slider__next">
+          <svg class="main-slider__icon">
+            <use xlink:href="#icon-arrow-down"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="wrapper wrapper_nopad">
+        <section class="advantages advantages_moved">
+          <div class="advantages__container">
+            <div class="advantages__item">
+              <div class="advantage-badge">
+                <div class="advantage-badge__text">Экологичность</div>
+                <img class="advantage-badge__image" src="/img/advantage-badge__image_eco.svg" alt="Экологичность">
+              </div>
+              <div class="advantages__description">
+                Мы используем только натуральные масла и краски на водной основе, чтобы сохранить естественную фактуру дерева и ваше здоровье.
+              </div>
+            </div>
+            <div class="advantages__item">
+              <div class="advantage-badge">
+                <div class="advantage-badge__text">Интерьер без дизайнера</div>
+                <img class="advantage-badge__image" src="/img/advantage-badge__image_interior.svg" alt="Интерьер">
+              </div>
+              <div class="advantages__description">
+                Выбирая нашу мебель, вы получите единое стилистическое решение, не прибегая к услугам дизайнера.
+              </div>
+            </div>
+            <div class="advantages__item">
+              <div class="advantage-badge">
+                <div class="advantage-badge__text">Большой ассортимент</div>
+                <img class="advantage-badge__image" src="/img/advantage-badge__image_assortment.svg" alt="Ассортимент">
+              </div>
+              <div class="advantages__description">
+                Более 3 500 изделий на складе и на заказ. Свыше 4 500 решений по комбинации цвета в обивке мягкой мебели.
+              </div>
+            </div>
+            <div class="advantages__item">
+              <div class="advantage-badge">
+                <div class="advantage-badge__text">Доставка по России</div>
+                <img class="advantage-badge__image" src="/img/advantage-badge__image_delivery.svg" alt="Грузовик">
+              </div>
+              <div class="advantages__description">
+                Оперативная отгрузка на складе и собственная служба доставки позволяют точно в срок доставлять ваши заказы.
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page__section">
+          <div class="teaser">
+            <a href="/collection-item.html" class="teaser__item">
+              <div class="teaser__image" style="background-image: url('/img/teaser__image_1.jpg'">
+                <div class="teaser__wrapper">
+                  <div class="teaser__title">Коллекция 1</div>
+                  <div class="teaser__info">
+                    <span class="teaser__label">10 предметов</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/collection-item.html" class="teaser__item">
+              <div class="teaser__image" style="background-image: url('/img/teaser__image_2.jpg'">
+                <div class="teaser__wrapper">
+                  <div class="teaser__title">Коллекция 2</div>
+                  <div class="teaser__info">
+                    <span class="teaser__label">10 предметов</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/collection-item.html" class="teaser__item">
+              <div class="teaser__image" style="background-image: url('/img/teaser__image_3.jpg'">
+                <div class="teaser__wrapper">
+                  <div class="teaser__title">Коллекция 3</div>
+                  <div class="teaser__info">
+                    <span class="teaser__label">10 предметов</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/collection-item.html" class="teaser__item">
+              <div class="teaser__image" style="background-image: url('/img/teaser__image_4.jpg'">
+                <div class="teaser__wrapper">
+                  <div class="teaser__title">Коллекция 4</div>
+                  <div class="teaser__info">
+                    <span class="teaser__label">10 предметов</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+      <div class="info">
+        <div class="wrapper">
+          <div class="info__container">
+            <div class="info__column info__column_shrink">
+              <div class="info-title">
+                <svg class="info-title__icon">
+                  <use xlink:href="#icon-questions"></use>
+                </svg>
+                <div class="info-title__text">Есть вопросы?</div>
+              </div>
+            </div>
+            <div class="info__column">
+              <div class="info__text">
+                Вы можете задать вопрос или проконсультироваться с нашим менеджером.
+              </div>
+            </div>
+            <div class="info__column">
+              <a href="javascript:;" class="button button_size_l button_transparent">Задать вопрос</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <section class="page__section-l">
+          <h2 class="title title_centered title_top">Популярные товары</h2>
+          <div class="items-slider">
+            <div class="items-slider__container swiper-container js-items-slider">
+              <div class="items-slider__wrapper swiper-wrapper">
+                <div class="items-slider__slide swiper-slide">
+                  <a href="/catalog.html" class="card">
+                    <div class="card__badge">Хит</div>
+                    <img class="card__image swiper-lazy" data-src="/img/card__image_1.jpg" alt="Морган диван угловой с оттоманкой">
+                    <div class="card__content">
+                      <span class="card__title">"Морган" диван угловой с оттоманкой</span>
+                      <div class="card__price">49&nbsp;908&nbsp;&#8381;</div>
+                    </div>
+                    <div class="card__info">
+                      <div class="card__parameters">ШхВхГ: 3340х970х1200</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="items-slider__slide swiper-slide">
+                  <a href="/catalog.html" class="card">
+                    <img class="card__image swiper-lazy" data-src="/img/card__image_2.jpg" alt="Шкаф настенный Берген">
+                    <div class="card__badge">Хит</div>
+                    <div class="card__content">
+                      <span class="card__title">Шкаф настенный "Берген"</span>
+                      <div class="card__price">49&nbsp;908&nbsp;&#8381;</div>
+                    </div>
+                    <div class="card__info">
+                      <div class="card__parameters">ШхВхГ: 3340х970х1200</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="items-slider__slide swiper-slide">
+                  <a href="/catalog.html" class="card">
+                    <img class="card__image swiper-lazy" data-src="/img/card__image_3.jpg" alt="Lofft диван 3-х модульный">
+                    <div class="card__content">
+                      <span class="card__title">"Lofft" диван 3-х модульный</span>
+                      <div class="card__price">49&nbsp;908&nbsp;&#8381;</div>
+                    </div>
+                    <div class="card__info">
+                      <div class="card__parameters">ШхВхГ: 3340х970х1200</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="items-slider__slide swiper-slide">
+                  <a href="/catalog.html" class="card">
+                    <img class="card__image swiper-lazy" data-src="/img/card__image_4.jpg" alt="Тумба под ТВ Марсель-030">
+                    <div class="card__content">
+                      <span class="card__title">Тумба под ТВ "Марсель-030"</span>
+                      <div class="card__price">49&nbsp;908&nbsp;&#8381;</div>
+                    </div>
+                    <div class="card__info">
+                      <div class="card__parameters">ШхВхГ: 3340х970х1200</div>
+                    </div>
+                  </a>
+                </div>
+                <div class="items-slider__slide swiper-slide">
+                  <a href="/catalog.html" class="card">
+                    <img class="card__image swiper-lazy" data-src="/img/card__image_1.jpg" alt="Морган диван угловой с оттоманкой">
+                    <div class="card__content">
+                      <span class="card__title">"Морган" диван угловой с оттоманкой</span>
+                      <div class="card__price">49&nbsp;908&nbsp;&#8381;</div>
+                    </div>
+                    <div class="card__info">
+                      <div class="card__parameters">ШхВхГ: 3340х970х1200</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="items-slider__button js-items-slider__prev">
+              <svg class="items-slider__icon">
+                <use xlink:href="#icon-arrow-down"></use>
+              </svg>
+            </div>
+            <div class="items-slider__button items-slider__button_next js-items-slider__next">
+              <svg class="items-slider__icon">
+                <use xlink:href="#icon-arrow-down"></use>
+              </svg>
+            </div>
+            <div class="slider-pagination slider-pagination_bottom js-items-slider__pagination"></div>
+          </div>
+        </section>
+      </div>
+      <section class="section section_decorated">
+        <div class="section__wrapper">
+          <div class="section__column">
+            <div class="rack">
+              <h2 class="title title_top">Отзывы о нас</h2>
+              <div class="rack__header">
+                <div class="shelf">
+                  <div class="shelf__item shelf__item_large">
+                    Вы можете оставить свои пожелания и отзыв о работе магазина и других служб компании.
+                  </div>
+                  <div class="shelf__item">
+                    <a href="javascript:;" class="button button_color_dark button_light">Оставить отзыв</a>
+                  </div>
+                </div>
+              </div>
+              <div class="rack__content">
+                <div class="review-slider swiper-container js-review-slider">
+                  <div class="review-slider__wrapper swiper-wrapper">
+                    <div class="swiper-slide review-card">
+                      <div class="review-card__wrapper">
+                        <div class="review-card__text">
+                          Качеством мебели доволен вполне. Ребята молодцы, приехали, все собрали, быстро и четко – мне понравилось. А мебель сама оригинальненькая,
+                          поэтому я и купил. Единственное, немного опоздали с поставкой, но, что самое, пожалуй, приятное
+                          я от этого только выиграл... – получил подарочки и бонусы... от компании. Это классно! Коллекция
+                          «Фолк».
+                        </div>
+                        <div class="review-card__link">
+                          <a class="link" href="javascript:;">Подробнее</a>
+                        </div>
+                      </div>
+                      <div class="review-card__caption">
+                        Грановская Оксана, Сергей, 28 Сентября 2017
+                      </div>
+                    </div>
+                    <div class="swiper-slide review-card">
+                      <div class="review-card__wrapper">
+                        <div class="review-card__text">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, voluptatibus?
+                        </div>
+                        <div class="review-card__link">
+                          <a class="link" href="javascript:;">Подробнее</a>
+                        </div>
+                      </div>
+                      <div class="review-card__caption">
+                        Иннокентий Красноперекопский, 28 Сентября 2017
+                      </div>
+                    </div>
+                    <div class="swiper-slide review-card">
+                      <div class="review-card__wrapper">
+                        <div class="review-card__text">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est rem quibusdam modi, sunt ducimus commodi eum at cupiditate ipsam!
+                          Quam vel sed magni expedita ad incidunt debitis, tempora aut animi magnam aliquid, repellat, nemo
+                          possimus exercitationem totam! Itaque, pariatur, inventore vero odit iusto veniam distinctio obcaecati
+                          molestias tempore fugiat sit?
+                        </div>
+                        <div class="review-card__link">
+                          <a class="link" href="javascript:;">Подробнее</a>
+                        </div>
+                      </div>
+                      <div class="review-card__caption">
+                        Джон Сноу, 28 Сентября 2017
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-slider__button js-review-slider__prev">
+                    <svg class="review-slider__icon">
+                      <use xlink:href="#icon-arrow-down"></use>
+                    </svg>
+                  </div>
+                  <div class="review-slider__button review-slider__button_next js-review-slider__next">
+                    <svg class="review-slider__icon review-slider__icon_next">
+                      <use xlink:href="#icon-arrow-down"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="rack__bottom">
+                <a class="button button_color_dark" href="javascript:;">Все отзывы</a>
+              </div>
+            </div>
+          </div>
+          <div class="section__column section__column_last">
+            <div class="rack">
+              <h2 class="title title_top">Наша мебель в жизни</h2>
+              <div class="rack__header">
+                Вы можете рассказать о мебели IronWood, выложив фото в Instagram с хештегом
+                <b>#IronWood</b>
+              </div>
+              <div class="rack__content">
+                <!-- data-images - это строка в uriencoded json объекта с данными картинок для галереи
+                https://codepen.io/HummerHead87/pen/oEgZyy?editors=1011
+                ВАЖНО: первые 2 картинки должны быть большими вариантами картинок в элементе img.small-gallery__image -->
+                <div class="small-gallery js-small-gallery" data-images="%5B%7B%22src%22%3A%22https%3A%2F%2Fdummyimage.com%2F1360x768%2Faeaeae%2Ffff%22%2C%22title%22%3A%22%D0%9A%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%201%22%7D%2C%7B%22src%22%3A%22https%3A%2F%2Fdummyimage.com%2F1360x768%2Faeaeae%2Ffff%22%2C%22title%22%3A%22%D0%9A%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%202%22%7D%2C%7B%22src%22%3A%22https%3A%2F%2Fdummyimage.com%2F1360x768%2Faeaeae%2Ffff%22%2C%22title%22%3A%22%D0%9A%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%203%22%7D%2C%7B%22src%22%3A%22https%3A%2F%2Fdummyimage.com%2F1360x768%2Faeaeae%2Ffff%22%2C%22title%22%3A%22%D0%9A%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%204%22%7D%5D">
+                  <a class="small-gallery__item js-small-gallery__item" href="javascript:;">
+                    <img class="small-gallery__image" src="/img/small-gallery__image_1.jpg" alt="Фото">
+                    <div class="small-gallery__mask">
+                      <svg class="small-gallery__icon">
+                        <use xlink:href="#icon-zoom"></use>
+                      </svg>
+                    </div>
+                  </a>
+                  <a class="small-gallery__item js-small-gallery__item" href="javascript:;">
+                    <img class="small-gallery__image" src="/img/small-gallery__image_2.jpg" alt="Фото">
+                    <div class="small-gallery__mask">
+                      <svg class="small-gallery__icon">
+                        <use xlink:href="#icon-zoom"></use>
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="rack__bottom">
+                <a class="button button_color_dark" href="javascript:;">
+                  <svg class="icon icon_inline">
+                    <use xlink:href="#icon-instagram"></use>
+                  </svg>
+                  Смотреть
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="wrapper">
+        <section class="page__section-l">
+          <h2 class="title title_centered title_top">Мебель в стиле лофт</h2>
+          <div class="user-content user-content_centered">
+            <p>
+              Интернет-магазин мебели Iroonwood.ru - пространство, в котором живет правильная мебель самых разных противоположностей -
+              воздушный французский Прованс, характерный американский Лофт - мягкая мебель этих стилей, а также мебель из
+              массива натурального дерева дуба, сосны, ольхи, березы. В создании мебельных коллекций Loft by Wellige, Provence
+              мы отражаем самые последние мебельные тенденции - эргономичность, многофункциональность, натуральность материалов
+              и, безусловно, грацию и оригинальность стилевых решений. В наших каталогах вы найдете не просто качественную,
+              но изысканную мебель, способную реализовать в жизнь самый взыскательный запрос. Тем, кому импонирует изящная
+              простота и неспешная жизнь в загородном доме идеально подойдет стиль Прованс - идеальный выбор для тех, кто
+              предпочитает чуть сдержанную элегантность очаровательного и романтичного кантри. Ценители открытого пространства,
+              свободы мысли, натуральных материалов, смогут выбрать у нас мебель в стиле Лофт.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__container">
+          <div class="footer__column footer__column_grow">
+            <ul class="footer-nav">
+              <li class="footer-nav__item active">
+                <a class="footer-nav__link" href="/">Главная</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/collections.html">Коллекции</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/about.html">О компании</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/for-designers.html">Дизайнерам</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/reviews.html">Отзывы</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/delivery.html">Доставка и оплата</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/contacts.html">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            &copy; 2018 Компания IRONWOOD<br>
+            <a href="javascript:;" class="link link_light">Политика конфиденциальности</a>
+          </div>
+          <div class="footer__column">
+            <a class="bees-logo" href="http://onlinebees.ru/" target="_blank">
+              <svg class="bees-logo__icon">
+                <use xlink:href="#icon-bees-logo"></use>
+              </svg>
+              <div class="bees-logo__text">
+                Разработка сайта<br>
+                onlinebees.ru
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+<script type="text/javascript" src="/js/common.js"></script></body>
+
+</html>

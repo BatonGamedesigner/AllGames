@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang=ru>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv=X-UA-Compatible content="ie=edge">
+    <title>IronWood</title>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
+    <link href="/css/common.css" rel="stylesheet">
+</head>
+<body class=body>
+<div class=page id=vue-app>
+    <header class=header>
+        <div class=header__wrapper>
+            <div class=header__container>
+                <div class="header__column header__column_logo"><a href=/ class=logo>
+                    <svg class=logo__image>
+                        <use xlink:href=#logo></use>
+                    </svg>
+                </a></div>
+                <div class="header__column header__column_large header__column_clear_right">
+                    <div class=socials><a class=socials__item href=javascript:;>
+                        <svg class=socials__icon>
+                            <use xlink:href=#icon-vk></use>
+                        </svg>
+                    </a> <a class=socials__item href=javascript:;>
+                        <svg class=socials__icon>
+                            <use xlink:href=#icon-instagram></use>
+                        </svg>
+                    </a> <a class=socials__item href=javascript:;>
+                        <svg class=socials__icon>
+                            <use xlink:href=#icon-odnoklassniki></use>
+                        </svg>
+                    </a> <a class=socials__item href=javascript:;>
+                        <svg class=socials__icon>
+                            <use xlink:href=#icon-facebook></use>
+                        </svg>
+                    </a></div>
+                </div>
+                <div class="header__column header__column_search">
+                    <form class=search action=# method=GET><input class=search__input type=search
+                                                                  placeholder="Поиск по сайту">
+                        <button class=search__button title=Искать>
+                            <svg class=search__icon>
+                                <use xlink:href=#icon-search></use>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class=header__column><a class=badge href=tel:+79057441218>
+                    <div class=badge__image>
+                        <svg class=badge__icon>
+                            <use xlink:href=#icon-phone></use>
+                        </svg>
+                    </div>
+                    <div class=badge__label>+7 905 744-12-18</div>
+                </a></div>
+                <div class="header__column header__column_clear_right"><a class=badge href=/cart.html>
+                    <div class="badge__image badge__image_active">
+                        <div class=badge__number>6</div>
+                    </div>
+                    <div class="badge__label badge__label_small">Корзина: 10&nbsp;541&nbsp;&#8381;</div>
+                </a></div>
+            </div>
+        </div>
+    </header>
+    <div class="navigation js-navigation">
+        <div class=navigation__wrapper>
+            <div class="navigation__button js-navigation__button"><span class=navigation__line></span> <span
+                    class=navigation__line></span> <span class=navigation__line></span></div>
+            <nav class="header-nav navigation__content js-navigation__content">
+                <ul class=header-nav__list>
+                    <li class=header-nav__list-item><a href=/ class=header-nav__link>Главная</a></li>
+                    <li class="header-nav__list-item header-nav__list-item_has-dropdown js-header-nav__button active"><a
+                            class=header-nav__link href=/catalog.html> Коллекции
+                        <svg class=header-nav__icon>
+                            <use xlink:href=#icon-arrow-down></use>
+                        </svg>
+                    </a>
+                        <div class=header-nav__dropdown>
+                            <div class=dropdown>
+                                <ul class=dropdown__content>
+                                    <li class=dropdown__item><a class=dropdown__link href=/collection-item.html>Коллекция
+                                        1</a></li>
+                                    <li class=dropdown__item><a class=dropdown__link href=/collection-item.html>Коллекция
+                                        2</a></li>
+                                    <li class=dropdown__item><a class=dropdown__link href=/collection-item.html>Коллекция
+                                        3</a></li>
+                                    <li class=dropdown__item><a class=dropdown__link href=/collection-item.html>Lorem,
+                                        ipsum dolor.</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class=header-nav__list-item><a href=/about.html class=header-nav__link>О компании</a></li>
+                    <li class=header-nav__list-item><a href=/for-designers.html class=header-nav__link>Дизайнерам</a>
+                    </li>
+                    <li class=header-nav__list-item><a href=/reviews.html class=header-nav__link>Отзывы</a></li>
+                    <li class=header-nav__list-item><a href=/delivery.html class=header-nav__link>Доставка и оплата</a>
+                    </li>
+                    <li class=header-nav__list-item><a href=/contacts.html class=header-nav__link>Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <main class=main>
+        <div class=wrapper>
+            <div class=page__section-xs>
+                <ol itemscope=itemscope itemtype=http://schema.org/BreadcrumbList class=breadcrumb>
+                    <li itemprop=itemListElement itemscope=itemscope itemtype=http://schema.org/ListItem
+                        class=breadcrumb__list><a href=/ itemprop=item class=breadcrumb__link> <span itemprop=name>Главная</span>
+                    </a>
+                        <meta itemprop=position content=0>
+                    </li>
+                    <li itemprop=itemListElement itemscope=itemscope itemtype=http://schema.org/ListItem
+                        class=breadcrumb__list><a href=/ itemprop=item class=breadcrumb__link> <span itemprop=name>Коллекции</span>
+                    </a>
+                        <meta itemprop=position content=1>
+                    </li>
+                    <li itemprop=itemListElement itemscope=itemscope itemtype=http://schema.org/ListItem
+                        class=breadcrumb__list><a href=/ itemprop=item class=breadcrumb__link> <span itemprop=name>Коллекция Берге</span>
+                    </a>
+                        <meta itemprop=position content=2>
+                    </li>
+                    <li class="breadcrumb__list active">Тумба под ТВ "Марсель-030"</li>
+                </ol>
+            </div>
+            <section class=page__section>
+                <div class=columns>
+                    <div class=columns__item>
+                        <div class=product>
+                            <div class=product__badge>Скидка</div>
+                            <div class="product__column product__column_small">
+                                <div class="thumbnails js-product__thumbnails">
+                                    <div class=thumbnails__slide><img class=thumbnails__image
+                                                                      src=/img/thumbnails__image_1.jpg alt="Фото 1">
+                                    </div>
+                                    <div class=thumbnails__slide><img class=thumbnails__image
+                                                                      src=/img/thumbnails__image_2.jpg alt="Фото 2">
+                                    </div>
+                                    <div class=thumbnails__slide><img class=thumbnails__image
+                                                                      src=/img/thumbnails__image_3.jpg alt="Фото 3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=product__column>
+                                <div class="slider js-product__slider">
+                                    <div class=slider__slide>
+                                        <div class=adjuster>
+                                            <canvas class=adjuster__canvas height=1 width=1></canvas>
+                                            <img class="adjuster__image adjuster__image_centered"
+                                                 data-lazy="/img/slider__image_1.jpg" alt="Фото 1"></div>
+                                    </div>
+                                    <div class=slider__slide>
+                                        <div class=adjuster>
+                                            <canvas class=adjuster__canvas height=1 width=1></canvas>
+                                            <img class="adjuster__image adjuster__image_centered"
+                                                 data-lazy="/img/slider__image_2.jpg" alt="Фото 2"></div>
+                                    </div>
+                                    <div class=slider__slide>
+                                        <div class=adjuster>
+                                            <canvas class=adjuster__canvas height=1 width=1></canvas>
+                                            <img class="adjuster__image adjuster__image_centered"
+                                                 data-lazy="/img/slider__image_3.jpg" alt="Фото 3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info product-info_bottom">
+                            <div class="product-info__title title title_size_s title_low">Описание</div>
+                            <div class=user-content><p> Тумба под ТВ «Марсель-030» станет отличным дополнением к Вашей
+                                гостиной или спальне в стиле Кантри. Она оснащена двумя выдвижными ящиками, отделением с
+                                дверцей, а так же выдвижной полкой, где можно разместить видео- или радиоаппаратуру, а
+                                благодаря специальному отверстию, Вам удастся спрятать все сопутствующие провода. Тумба
+                                выполнена из массива дуба. </p></div>
+                        </div>
+                    </div>
+                    <div class="columns__item columns__item_small">
+                        <div class=params>
+                            <div class="params__title title title_size_s title_low">Тумба под ТВ "Марсель-030"</div>
+                            <div class=params__field-l>
+                                <div class=params__caption>Артикул: 31231243</div>
+                            </div>
+                            <div class=params__field>
+                                <div class=params__label>Габариты (ШхВхГ)</div>
+                                <div class=select><select type=select class=select__input>
+                                    <option value=1>750х600х600 мм</option>
+                                    <option value=2>1000х600х600 мм</option>
+                                </select>
+                                    <div class=select__dummy></div>
+                                </div>
+                            </div>
+                            <div class=params__field>
+                                <div class=params__label>Высота столешницы</div>
+                                <div class=select><select type=select class=select__input>
+                                    <option value=200>200 мм</option>
+                                    <option value=300>300 мм</option>
+                                </select>
+                                    <div class=select__dummy></div>
+                                </div>
+                            </div>
+                            <div class=params__field>
+                                <div class=params__label>Цвет</div>
+                                <div class=select><select type=select class=select__input>
+                                    <option value=1>Бежевый</option>
+                                    <option value=2>Красный</option>
+                                </select>
+                                    <div class=select__dummy></div>
+                                </div>
+                            </div>
+                            <div class=params__field>
+                                <div class=params__label>Материал</div>
+                                <div class=select><select type=select class=select__input>
+                                    <option value=1>Цельноламельный / железо</option>
+                                    <option value=2>Дерево</option>
+                                </select>
+                                    <div class=select__dummy></div>
+                                </div>
+                            </div>
+                            <div class=params__field>
+                                <div class=params__label>Покрытие</div>
+                                <div class=select><select type=select class=select__input>
+                                    <option value=1>Матовое</option>
+                                    <option value=2>Глянцевое</option>
+                                </select>
+                                    <div class=select__dummy></div>
+                                </div>
+                            </div>
+                            <div class=params__field-l>
+                                <div class=params__caption>Реальные цвета могут несколько отличаться от тех, что вы
+                                    видите на сайте. Более точную информацию по данной позиции вы можете узнать у наших
+                                    менеджеров или по телефону 8 (8412) 30-55-50
+                                </div>
+                            </div>
+                            <div class=params__price>
+                                <div class=price>
+                                    <div class=price__old>59&nbsp;360&nbsp;&#8381;</div>
+                                    <div class=price__current>49&nbsp;250&nbsp;&#8381;</div>
+                                </div>
+                            </div>
+                            <div class=params__submit><a href=javascript:; class="button button_size_l">Купить</a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class=page__section-main><h2 class="title title_top"> Другие предметы из коллекции </h2>
+                <div class=items-slider>
+                    <div class="items-slider__container swiper-container js-items-slider">
+                        <div class="items-slider__wrapper swiper-wrapper">
+                            <div class="items-slider__slide swiper-slide"><a href=/catalog.html class=card>
+                                <div class=card__badge>Хит</div>
+                                <img class="card__image swiper-lazy" data-src="/img/card__image_1.jpg"
+                                     alt="Морган диван угловой с оттоманкой">
+                                <div class=card__content><span
+                                        class=card__title>"Морган" диван угловой с оттоманкой</span>
+                                    <div class=card__price>49&nbsp;908&nbsp;&#8381;</div>
+                                </div>
+                                <div class=card__info>
+                                    <div class=card__parameters>ШхВхГ: 3340х970х1200</div>
+                                </div>
+                            </a></div>
+                            <div class="items-slider__slide swiper-slide"><a href=/catalog.html class=card> <img
+                                    class="card__image swiper-lazy" data-src="/img/card__image_2.jpg"
+                                    alt="Шкаф настенный Берген">
+                                <div class=card__badge>Хит</div>
+                                <div class=card__content><span class=card__title>Шкаф настенный "Берген"</span>
+                                    <div class=card__price>49&nbsp;908&nbsp;&#8381;</div>
+                                </div>
+                                <div class=card__info>
+                                    <div class=card__parameters>ШхВхГ: 3340х970х1200</div>
+                                </div>
+                            </a></div>
+                            <div class="items-slider__slide swiper-slide"><a href=/catalog.html class=card> <img
+                                    class="card__image swiper-lazy" data-src="/img/card__image_3.jpg"
+                                    alt="Lofft диван 3-х модульный">
+                                <div class=card__content><span class=card__title>"Lofft" диван 3-х модульный</span>
+                                    <div class=card__price>49&nbsp;908&nbsp;&#8381;</div>
+                                </div>
+                                <div class=card__info>
+                                    <div class=card__parameters>ШхВхГ: 3340х970х1200</div>
+                                </div>
+                            </a></div>
+                            <div class="items-slider__slide swiper-slide"><a href=/catalog.html class=card> <img
+                                    class="card__image swiper-lazy" data-src="/img/card__image_4.jpg"
+                                    alt="Тумба под ТВ Марсель-030">
+                                <div class=card__content><span class=card__title>Тумба под ТВ "Марсель-030"</span>
+                                    <div class=card__price>49&nbsp;908&nbsp;&#8381;</div>
+                                </div>
+                                <div class=card__info>
+                                    <div class=card__parameters>ШхВхГ: 3340х970х1200</div>
+                                </div>
+                            </a></div>
+                            <div class="items-slider__slide swiper-slide"><a href=/catalog.html class=card> <img
+                                    class="card__image swiper-lazy" data-src="/img/card__image_1.jpg"
+                                    alt="Морган диван угловой с оттоманкой">
+                                <div class=card__content><span
+                                        class=card__title>"Морган" диван угловой с оттоманкой</span>
+                                    <div class=card__price>49&nbsp;908&nbsp;&#8381;</div>
+                                </div>
+                                <div class=card__info>
+                                    <div class=card__parameters>ШхВхГ: 3340х970х1200</div>
+                                </div>
+                            </a></div>
+                        </div>
+                    </div>
+                    <div class="items-slider__button js-items-slider__prev">
+                        <svg class=items-slider__icon>
+                            <use xlink:href=#icon-arrow-down></use>
+                        </svg>
+                    </div>
+                    <div class="items-slider__button items-slider__button_next js-items-slider__next">
+                        <svg class=items-slider__icon>
+                            <use xlink:href=#icon-arrow-down></use>
+                        </svg>
+                    </div>
+                    <div class="slider-pagination slider-pagination_bottom js-items-slider__pagination"></div>
+                </div>
+            </section>
+        </div>
+        <div class="info info_decorated">
+            <div class=wrapper>
+                <div class=info__container>
+                    <div class="info__column info__column_shrink">
+                        <div class=info-title>
+                            <svg class="info-title__icon info-title__icon_dark">
+                                <use xlink:href=#icon-questions></use>
+                            </svg>
+                            <div class=info-title__text>Есть вопросы?</div>
+                        </div>
+                    </div>
+                    <div class=info__column>
+                        <div class=info__text> Вы можете задать вопрос или проконсультироваться с нашим менеджером.
+                        </div>
+                    </div>
+                    <div class=info__column><a href=javascript:;
+                                               class="button button_size_l button_color_dark button_transparent">Задать
+                        вопрос</a></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class=footer>
+        <div class=wrapper>
+            <div class=footer__container>
+                <div class="footer__column footer__column_grow">
+                    <ul class=footer-nav>
+                        <li class=footer-nav__item><a class=footer-nav__link href=/>Главная</a></li>
+                        <li class="footer-nav__item active"><a class=footer-nav__link
+                                                               href=/collections.html>Коллекции</a></li>
+                        <li class=footer-nav__item><a class=footer-nav__link href=/about.html>О компании</a></li>
+                        <li class=footer-nav__item><a class=footer-nav__link href=/for-designers.html>Дизайнерам</a>
+                        </li>
+                        <li class=footer-nav__item><a class=footer-nav__link href=/reviews.html>Отзывы</a></li>
+                        <li class=footer-nav__item><a class=footer-nav__link href=/delivery.html>Доставка и оплата</a>
+                        </li>
+                        <li class=footer-nav__item><a class=footer-nav__link href=/contacts.html>Контакты</a></li>
+                    </ul>
+                </div>
+                <div class=footer__column> &copy; 2018 Компания IRONWOOD <br> <a href=javascript:;
+                                                                                 class="link link_light">Политика
+                    конфиденциальности</a></div>
+                <div class=footer__column><a class=bees-logo href=http://onlinebees.ru/ target=_blank>
+                    <svg class=bees-logo__icon>
+                        <use xlink:href=#icon-bees-logo></use>
+                    </svg>
+                    <div class=bees-logo__text> Разработка сайта <br>onlinebees.ru</div>
+                </a></div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

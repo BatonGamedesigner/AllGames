@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IronWood</title>
+  <!-- временный jQuery. На бекенде потом подключат свой -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="/css/common.css" rel="stylesheet"></head>
+
+<body class="body">
+  <div class="page" id="vue-app">
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__container">
+          <div class="header__column header__column_logo">
+            <a href="/" class="logo">
+              <svg class="logo__image">
+                <use xlink:href="#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="header__column header__column_large header__column_clear_right">
+            <div class="socials">
+              <a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-vk"></use>
+                </svg>
+              </a><!-- убирает пробелы между инлайн блоками
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-instagram"></use>
+                </svg>
+              </a><!--
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-odnoklassniki"></use>
+                </svg>
+              </a><!--
+           --><a class="socials__item" href="javascript:;">
+                <svg class="socials__icon">
+                  <use xlink:href="#icon-facebook"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="header__column header__column_search">
+            <form class="search" action="#" method="GET">
+              <input class="search__input" type="search" placeholder="Поиск по сайту">
+              <button class="search__button" title="Искать">
+                <svg class="search__icon">
+                  <use xlink:href="#icon-search"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="header__column">
+            <a class="badge" href="tel:+79057441218">
+              <div class="badge__image">
+                <svg class="badge__icon">
+                  <use xlink:href="#icon-phone"></use>
+                </svg>
+              </div>
+              <div class="badge__label">+7 905 744-12-18</div>
+            </a>
+          </div>
+          <div class="header__column header__column_clear_right">
+            <!-- вариант пустой корзины -->
+            <!-- <a class="badge" href="/cart.html">
+              <div class="badge__image">
+                <svg class="badge__icon">
+                  <use xlink:href="#icon-shopping-cart"></use>
+                </svg>
+              </div>
+              <div class="badge__label badge__label_small">Корзина: пуста</div>
+            </a> -->
+            <!-- вариант заполненной корзины -->
+            <a class="badge" href="/cart.html">
+              <div class="badge__image badge__image_active">
+                <div class="badge__number">6</div>
+              </div>
+              <div class="badge__label badge__label_small">Корзина: 10&nbsp;541&nbsp;&#8381;</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="navigation js-navigation">
+      <div class="navigation__wrapper">
+        <div class="navigation__button js-navigation__button">
+          <span class="navigation__line"></span>
+          <span class="navigation__line"></span>
+          <span class="navigation__line"></span>
+        </div>
+        <nav class="header-nav navigation__content js-navigation__content">
+          <ul class="header-nav__list">
+            <li class="header-nav__list-item">
+              <a href="/" class="header-nav__link">Главная</a>
+            </li>
+            <li class="header-nav__list-item header-nav__list-item_has-dropdown js-header-nav__button">
+              <a class="header-nav__link" href="/catalog.html">
+                Коллекции
+                <svg class="header-nav__icon">
+                  <use xlink:href="#icon-arrow-down"></use>
+                </svg>
+              </a>
+              <div class="header-nav__dropdown">
+                <div class="dropdown">
+                  <ul class="dropdown__content">
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 1</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 2</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Коллекция 3</a>
+                    </li>
+                    <li class="dropdown__item">
+                      <a class="dropdown__link" href="/collection-item.html">Lorem, ipsum dolor.</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="header-nav__list-item active">
+              <a href="/about.html" class="header-nav__link">О компании</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/for-designers.html" class="header-nav__link">Дизайнерам</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/reviews.html" class="header-nav__link">Отзывы</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/delivery.html" class="header-nav__link">Доставка и оплата</a>
+            </li>
+            <li class="header-nav__list-item">
+              <a href="/contacts.html" class="header-nav__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <main class="main">
+      <div class="wrapper">
+        <div class="page__section-xs">
+          <ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+            <li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__list">
+              <a href="/" itemprop="item" class="breadcrumb__link">
+                <span itemprop="name">Главная</span>
+              </a>
+              <meta itemprop="position" content="0">
+            </li>
+            <li class="breadcrumb__list active">Спасибо</li>
+          </ol>
+        </div>
+        <section class="page__section-main">
+          <div class="frame frame_simple">
+            <div class="frame__container">
+              <div class="help-info">
+                <div class="help-info__column">
+                  <h1 class="title title_size_l">Спасибо!</h1>
+                  <div class="help-info__label">Мы свяжемся с вами в ближайшее время.</div>
+                  <div class="help-info__link">
+                    <a href="/" class="link">Вернуться на главную</a>
+                  </div>
+                  <div class="help-info__caption">
+                    P.S.: Котик грустит, потому что у него нет такой мебели, а у вас теперь есть!
+                  </div>
+                </div>
+                <div class="help-info__column help-info__column_right">
+                  <img src="/img/help-info__image_cat.jpg" alt="Кот" class="help-info__image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__container">
+          <div class="footer__column footer__column_grow">
+            <ul class="footer-nav">
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/">Главная</a>
+              </li>
+              <li class="footer-nav__item active">
+                <a class="footer-nav__link" href="/collections.html">Коллекции</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/about.html">О компании</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/for-designers.html">Дизайнерам</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/reviews.html">Отзывы</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/delivery.html">Доставка и оплата</a>
+              </li>
+              <li class="footer-nav__item">
+                <a class="footer-nav__link" href="/contacts.html">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            &copy; 2018 Компания IRONWOOD
+            <br>
+            <a href="javascript:;" class="link link_light">Политика конфиденциальности</a>
+          </div>
+          <div class="footer__column">
+            <a class="bees-logo" href="http://onlinebees.ru/" target="_blank">
+              <svg class="bees-logo__icon">
+                <use xlink:href="#icon-bees-logo"></use>
+              </svg>
+              <div class="bees-logo__text">
+                Разработка сайта
+                <br>onlinebees.ru
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+<script type="text/javascript" src="/js/common.js"></script></body>
+
+</html>
